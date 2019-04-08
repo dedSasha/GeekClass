@@ -8,6 +8,8 @@
     <h2>Создание шкалы образовательных результатов</h2>
     <div class="row" style="margin-top: 15px;">
         <div class="col">
+            <div class="card">
+                <div class="card-body">
             <form method="POST" class="form-horizontal" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -24,7 +26,7 @@
 
                 <div class="form-group">
                     <label for="description">Описание</label>
-                    <textarea id="description"  class="form-control"  name="description" required>{{old('description')}}</textarea>
+                    <textarea id="description"  class="form-control"  name="description">{{old('description')}}</textarea>
                     @if ($errors->has('description'))
                         <span class="help-block error-block">
                                         <strong>{{ $errors->first('description') }}</strong>
@@ -34,6 +36,8 @@
 
                 <button type="submit" class="btn btn-success">Создать</button>
             </form>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
